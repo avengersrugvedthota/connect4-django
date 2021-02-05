@@ -6,7 +6,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Connect 4 | Blog Details</title>
+    <title>Connect 4 | Blog</title>
         <link rel="icon" href="{% static 'download.jpg' %}" type="image/icon type">
 
 <style media="screen">
@@ -74,16 +74,11 @@
         </div>
     </nav>
     </nav>
+
+
 <div class="container">
-{% for blog in blog %}
+    <h1><u>How To Play The Game</u></h1>
 
-<h1 class="text-center mt-5" id="blogdetailtitle">{{ blog.title }}</h1>
-
-<h5 class="text-center text-muted mb-5">--{{ blog.date|date:'F jS Y' }}--</h5>
-
-{{ blog.description|safe }}
-
-
-{% endfor %}
+    <p>Player 1 Should Drop The Blue Chip And Player 2 Should Drop The Red Chip,</p>
+    <p>Player Should Somehow Make The Other Player Not To Connect 4 Chips (Red/Blue) In A Horizontal/Vertical Line Or Diagonally And The Player Should Connect 4 Chips (Red/Blue)</p>
 </div>
-

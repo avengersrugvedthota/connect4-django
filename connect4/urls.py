@@ -23,5 +23,6 @@ urlpatterns = [
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
+    path('instructions/', views.instructions, name='instruction'),
     path('blog/', include('blog.urls')),
 ]
