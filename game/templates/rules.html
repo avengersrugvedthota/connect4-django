@@ -3,9 +3,9 @@
 {% load static %}
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -52,7 +52,8 @@
 
 </head>
 <body>
-    <div class="loader">
+    <section>
+            <div class="loader">
     <img src="{% static 'loading.gif' %}" alt="Loading..." />
 </div>
 
@@ -72,26 +73,24 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'privacy' %}">Privacy Policy</a>
                     <a class="nav-link active" aria-current="page" href="{% url 'rules' %}">Rules</a>
                     <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
-                    <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'instruction' %}">How To Play</a>
+                    <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>]
                     <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/avengersrugvedthota/django.git">Source Code</a>
                 </div>
             </div>
         </div>
     </nav>
-    </nav>
+        <div class="container">
+            <h1 text:center><u>Rules Of Connect 4</u></h1>
 
-
-    <div class="container">
-        <h1 text:center><u>Rules Of Connect 4</u></h1>
-
-    <ul>
-        <li>The two players take alternate turns dropping one of their discs at a time into an unfilled column</li>
-        <li>If any of the players connect 4 discs in a row or column or in a diagonal they win</li>
-        <li>Playing time: 1 - 10 minutes</li></ul>
+            <ul>
+                <li>The two players take alternate turns dropping one of their discs at a time into an unfilled column</li>
+                <li>If any of the players connect 4 discs in a row or column or in a diagonal they win</li>
+                <li>Playing time: 1 - 10 minutes</li>
+            </ul>
         </div>
-
-
+    </section>
+    <div class="cursor"></div>
+    <script src="{% static 'app.js' %}"></script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

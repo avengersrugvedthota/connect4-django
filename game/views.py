@@ -15,6 +15,3 @@ def rules(request):
 
 def about(request):
     return render(request, 'about.html')
-
-def instructions(request):
-    return render(request, 'instructions.html')

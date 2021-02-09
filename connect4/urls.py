@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from game import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.game, name='home'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
-    path('instructions/', views.instructions, name='instruction'),
+    path('age/', views.about, name='age'),
     path('blog/', include('blog.urls')),
 ]

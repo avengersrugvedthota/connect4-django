@@ -2,12 +2,11 @@
 <html lang="en">
 {% load static %}
 
-
 <head>
     <!-- Required meta tags -->
-    <meta name="google-site-verification" content="bH0ptpi2qBid7L-rzF-xLDVgRyOTK4jKw13wnpVOAk8" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -54,6 +53,7 @@
 </style>
 
 </head>
+<section>
 <body>
     <div class="loader">
     <img src="{% static 'loading.gif' %}" alt="Loading..." />
@@ -74,7 +74,6 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'rules' %}">Rules</a>
                     <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
                     <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'instruction' %}">How To Play</a>
                     <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/avengersrugvedthota/django.git">Source Code</a>
                 </div>
             </div>
@@ -84,7 +83,9 @@
 
 
     {% block content %}{% endblock %}
-
+</section>
+    <div class="cursor"></div>
+    <script src="{% static 'app.js' %}"></script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
