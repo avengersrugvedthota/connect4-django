@@ -1,37 +1,30 @@
-const cursor = document.querySelector(".cursor");
+let curs = document.querySelector('.cursor');
 
-window.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.pageX + "px";
-    cursor.style.top = e.pageY + "px";
-    cursor.setAttribute("data-fromTop", cursor.offsetTop - scrollY);
-    // console.log(e)
-});
-window.addEventListener("scroll", () => {
-    const fromTop = cursor.getAttribute("data-fromTop");
-    cursor.style.top = scrollY + parseInt(fromTop) + "px";
-    console.log(scrollY);
-});
-window.addEventListener("click", () => {
-    if (cursor.classList.contains("click")) {
-        cursor.classList.remove("click");
-        void cursor.offsetWidth; // trigger a DOM reflow
-        cursor.classList.add("click");
-    } else {
-        cursor.classList.add("click");
-    }
+document.addEventListener('mousemove', (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  curs.style.left = (x - 15) + 'px';
+  curs.style.top = (y - 15) + 'px';
 });
 
-// *********************
-// This Code is for only the floating card in right bottom corner
-// **********************
-
-const touchButton = document.querySelector(".float-text");
-const card = document.querySelector(".float-card-info");
-const close = document.querySelector(".gg-close-r");
-
-touchButton.addEventListener("click", moveCard);
-close.addEventListener("click", moveCard);
-
-function moveCard() {
-    card.classList.toggle("active");
-}
+document.addEventListener('click', (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  
+  curs.classList.add('explosion');
+  setTimeout(function() {
+    curs.classList.remove('explosion');
+  }, 900);
+  
+  let blackhole = document.createElement('blackhole');
+  blackhole.style.left = x + 'px';
+  blackhole.style.top = y + 'px';
+  document.body.appendChild(blackhole);
+  let size = Math.random() * 40;
+  blackhole.style.width = 1 + size + 'px';
+  blackhole.style.height = 1 + size + 'px';
+  
+  setTimeout(function() {
+    blackhole.remove();
+  }, 2000);
+});
