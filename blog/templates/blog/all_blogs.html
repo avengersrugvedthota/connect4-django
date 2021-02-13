@@ -1,80 +1,4 @@
-{% load static %}
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Connect 4 | Blog</title>
-        <link rel="icon" href="{% static 'download.jpg' %}" type="image/icon type">
-
-<style media="screen">
-    .loader {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loader > img {
-    width: 100px;
-}
-
-.loader.hidden {
-    animation: fadeOut 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-.thumb {
-    height: 100px;
-    border: 1px solid black;
-    margin: 10px;
-}
-</style>
-<section>
-    <div class="loader">
-    <img src="{% static 'loading.gif' %}" alt="Loading..." />
-</div>
-
-<script type="text/javascript">window.addEventListener("load", function () {
-    const loader = document.querySelector(".loader");
-    loader.className += " hidden"; // class "loader hidden"
-});</script>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Game</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{% url 'privacy' %}">Privacy Policy</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'rules' %}">Rules</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
-                    <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>
-                    <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/avengersrugvedthota/django.git">Source Code</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    </nav>
-
-
+{% extends 'Base.html' %} {% load static %} {% block content %}
 <h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
 
 <h3 class="text-center mb-5">Total{{ blogs.count|pluralize }} Blogs Are {{ blogs.count }}</h3>
@@ -90,7 +14,5 @@
   </div>
 </div>
 {% endfor %}
-</section>
-    <div class="cursor"></div>
-    <div class="sparkle"></div>
-    <script src="{% static 'app.js' %}"></script>
+
+{% endblock %}

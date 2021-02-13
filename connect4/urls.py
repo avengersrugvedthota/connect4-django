@@ -24,6 +24,6 @@ urlpatterns = [
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
-    path('age/', views.about, name='age'),
+    path('age/', views.age, name='age'),
     path('blog/', include('blog.urls')),
 ]

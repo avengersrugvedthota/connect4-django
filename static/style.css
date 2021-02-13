@@ -2,9 +2,6 @@
     background-color: lightblue;
     color: red;
 }
-* {
-    cursor: none;
-}
 
 .cursor {
     z-index: 100;

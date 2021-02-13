@@ -15,3 +15,6 @@ def rules(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def age(request):
+    return render(request, 'age.html')
