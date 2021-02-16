@@ -54,6 +54,14 @@
 
 </head>
 <body>
+    <style>
+        footer {
+  text-align: center;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+    </style>
         <script type="text/javascript">
 "use strict";
 
@@ -89,10 +97,10 @@ drift.load('damh9drxfat6');
 </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Game</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="{% url 'home' %}">
+         <img src="{% static 'download.png' %}" width="30" height="30" class="d-inline-block align-top">
+        <span>Connect 4</span>
+    </a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="{% url 'privacy' %}">Privacy Policy</a>
@@ -100,15 +108,18 @@ drift.load('damh9drxfat6');
                     <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
                     <a class="nav-link active" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
                     <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>
-                    <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/avengersrugvedthota/django.git">Source Code</a>
+                    <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/rugvedthota9/connect4-django">Source Code</a>
                 </div>
             </div>
         </div>
     </nav>
     </nav>
 
-
     {% block content %}{% endblock %}
+
+    <footer>
+        <h4>Download The <a href="https://play.google.com/store/apps/details?id=com.zappycode.helloworld" target="_blank">Android App</a> On Play Store</h4>
+    </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
