@@ -28,6 +28,7 @@ urlpatterns = [
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
     path('age/', views.age, name='age'),
+    path('howtoplay/', views.how, name='how'),
     path('blog/', include('blog.urls')),
 ]
 

@@ -22,3 +22,6 @@ def age(request):
 
 def error404(request, exception):
     return render(request, '404.html')
+
+def how(request):
+    return render(request, 'How.html')
