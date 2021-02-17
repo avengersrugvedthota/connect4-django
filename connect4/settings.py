@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'h-#%!--=@8seab-jiq36rx^1lurij#$&$0$x*!@!yq7605@c6+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['rugvedconnect4.pythonanywhere.com']
 

@@ -18,3 +18,7 @@ def about(request):
 
 def age(request):
     return render(request, 'age.html')
+
+
+def error404(request, exception):
+    return render(request, '404.html')

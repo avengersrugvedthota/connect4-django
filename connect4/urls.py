@@ -19,6 +19,7 @@ from game import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+handler404 = 'game.views.error404'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
