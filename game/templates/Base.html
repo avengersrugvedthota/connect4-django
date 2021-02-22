@@ -3,6 +3,21 @@
 {% load static %}
 
 <head>
+
+    <meta name="apple-itunes-app" content="app-id=1554616517">
+
+<script async defer data-domain="rugvedconnect4.pythonanywhere.com" src="https://plausible.io/js/plausible.js"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D18CGRGFW1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D18CGRGFW1');
+</script>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +28,6 @@
 
     <title>Connect 4</title>
     <link rel="icon" href="{% static 'download.png' %}" type="image/icon type">
-
 
 <style media="screen">
     .loader {
@@ -53,15 +67,81 @@
 </style>
 
 </head>
-<body>
+<body class="h-100 bg-primary">
+
+        <div class="bg-primary">
     <style>
-        footer {
+footer {
   text-align: center;
   padding: 5px;
-  background-color: black;
+  background-color: blue;
   color: white;
 }
     </style>
+    <style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+}
+
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+</style>
         <script type="text/javascript">
 "use strict";
 
@@ -95,7 +175,9 @@ drift.load('damh9drxfat6');
     loader.className += " hidden"; // class "loader hidden"
 });</script>
 </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+<nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary" id="navbar-main">
         <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">
          <img src="{% static 'download.png' %}" width="30" height="30" class="d-inline-block align-top">
@@ -108,6 +190,7 @@ drift.load('damh9drxfat6');
                     <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
                     <a class="nav-link active" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
                     <a class="nav-link active" aria-current="page" href="{% url 'how' %}">How To Play</a>
+                    <a class="nav-link active" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
                     <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>
                     <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/rugvedthota9/connect4-django">Source Code</a>
                 </div>
@@ -115,6 +198,7 @@ drift.load('damh9drxfat6');
         </div>
     </nav>
     </nav>
+        <section>
 
     {% block content %}{% endblock %}
 
@@ -122,16 +206,12 @@ drift.load('damh9drxfat6');
         <h4>Download The <a href="https://play.google.com/store/apps/details?id=com.zappycode.helloworld" target="_blank">Android App</a> On Play Store</h4>
     </footer>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </section>
+</div>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
+
+    <script src="app.js"></script>
 </body>
 
 </html>

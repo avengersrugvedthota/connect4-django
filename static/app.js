@@ -1,31 +1,20 @@
-let curs = document.querySelector('.cursor');
+let mouseCursor = document.querySelector(".cursor");
+let navLinks = document.querySelectorAll('.nav-links li');
 
-document.addEventListener('mousemove', (e) => {
-  let x = e.pageX;
-  let y = e.pageY;
-  curs.style.left = (x - 15) + 'px';
-  curs.style.top = (y - 15) + 'px';
+window.addEventListener('mousemove', cursor);
+
+function cursor(e) {
+    mouseCursor.style.top = e.pageY + 'px';
+    mouseCursor.style.left = e.pageX + 'px';
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseleave', () => {
+        mouseCursor.classList.remove("link-grow");
+        link.classList.remove('hovered-link');
+    });
+    link.addEventListener('mouseover', () => {
+        mouseCursor.classList.add("link-grow");
+        link.classList.add('hovered-link');
+    });
 });
-
-document.addEventListener('click', (e) => {
-  let x = e.pageX;
-  let y = e.pageY;
-
-  curs.classList.add('explosion');
-  setTimeout(function() {
-    curs.classList.remove('explosion');
-  }, 900);
-
-  let blackhole = document.createElement('blackhole');
-  blackhole.style.left = x + 'px';
-  blackhole.style.top = y + 'px';
-  document.body.appendChild(blackhole);
-  let size = Math.random() * 40;
-  blackhole.style.width = 1 + size + 'px';
-  blackhole.style.height = 1 + size + 'px';
-
-  setTimeout(function() {
-    blackhole.remove();
-  }, 2000);
-});
-
