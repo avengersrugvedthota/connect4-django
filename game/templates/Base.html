@@ -78,69 +78,16 @@ footer {
   color: white;
 }
     </style>
-    <style>
-* {box-sizing: border-box;}
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#navbar {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 90px 10px;
-  transition: 0.4s;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 99;
-}
-
-#navbar a {
-  float: left;
-  color: black;
+</style>
+<style>
+a:link, a:visited {
+  color: red;
   text-align: center;
-  padding: 12px;
   text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+  display: inline-block;
 }
 
-#navbar #logo {
-  font-size: 35px;
-  font-weight: bold;
-  transition: 0.4s;
-}
-
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-#navbar a.active {
-  background-color: dodgerblue;
-  color: white;
-}
-
-#navbar-right {
-  float: right;
-}
-
-@media screen and (max-width: 580px) {
-  #navbar {
-    padding: 20px 10px !important;
-  }
-  #navbar a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  #navbar-right {
-    float: none;
-  }
-}
 </style>
         <script type="text/javascript">
 "use strict";
@@ -183,16 +130,33 @@ drift.load('damh9drxfat6');
          <img src="{% static 'download.png' %}" width="30" height="30" class="d-inline-block align-top">
         <span>Connect 4</span>
     </a>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="{% url 'privacy' %}">Privacy Policy</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'rules' %}">Rules</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
-                    <a class="nav-link active" aria-current="page" href="{% url 'how' %}">How To Play</a>
-                    <a class="nav-link active" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
-                    <a class="nav-link active" href="{% url 'blog:all_blogs' %}">Blog</a>
-                    <a class="nav-link active" aria-current="page" target="_blank" href="https://github.com/rugvedthota9/connect4-django">Source Code</a>
+<ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'privacy' %}">Privacy Policy</a>
+                    </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'rules' %}">Rules</a>
+                        </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'how' %}">How To Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a>
+                    </li>
+                </ul>
                 </div>
             </div>
         </div>
@@ -209,7 +173,6 @@ drift.load('damh9drxfat6');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     </section>
 </div>
-
 
     <script src="app.js"></script>
 </body>
