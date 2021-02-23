@@ -82,7 +82,7 @@ footer {
 </style>
 <style>
 a:link, a:visited {
-  color: red;
+  color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -122,48 +122,36 @@ drift.load('damh9drxfat6');
     loader.className += " hidden"; // class "loader hidden"
 });</script>
 </div>
+    <div class="wrapper">
 
-        <div class="container-fluid">
-<nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary" id="navbar-main">
-        <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">
-         <img src="{% static 'download.png' %}" width="30" height="30" class="d-inline-block align-top">
-        <span>Connect 4</span>
-    </a>
-            <div class="collapse navbar-collapse text-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-<ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+        <div class="nav" id="nav">
+            <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+
+                        <a href="{% url 'home' %}">Connect 4</a>
                         <a class="nav-link" aria-current="page" href="{% url 'privacy' %}">Privacy Policy</a>
-                    </li>
-
-                        <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'rules' %}">Rules</a>
-                        </li>
-
-                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'how' %}">How To Play</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a>
-                    </li>
-                </ul>
-                </div>
-            </div>
         </div>
-    </nav>
-    </nav>
-        <section>
 
+        <span onclick="openNav()" class="open" id="open">&#9776</span>
+
+    </div>
+
+   <script>
+        function openNav() {
+            document.getElementById("open").style.display = "none";
+            document.getElementById("nav").style.width = "100%";
+        }
+        function closeNav() {
+
+            document.getElementById("nav").style.width = "0";
+            document.getElementById("open").style.display = "block";
+        }
+    </script>
     {% block content %}{% endblock %}
 
     <footer>
@@ -171,7 +159,7 @@ drift.load('damh9drxfat6');
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    </section>
+
 </div>
 
     <script src="app.js"></script>
