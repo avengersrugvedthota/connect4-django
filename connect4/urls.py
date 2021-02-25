@@ -29,6 +29,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('age/', views.age, name='age'),
     path('howtoplay/', views.how, name='how'),
+    path('tweets/', views.twitter, name='tweets'),
     path('blog/', include('blog.urls')),
 ]
 

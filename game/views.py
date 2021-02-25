@@ -25,3 +25,6 @@ def error404(request, exception):
 
 def how(request):
     return render(request, 'How.html')
+
+def twitter(request):
+    return(request, 'Twitter.html')
