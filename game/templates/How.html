@@ -1,7 +1,9 @@
 {% extends 'Base.html' %} {% load static %} {% block content %}
+<style>
 
-<video controls>
-    <source src="{% static '111.mp4' %}" type="video/mp4" width="500" height="500">
-</video>
+</style>
+<div align="center" class="iframe-container">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/utXzIFEVPjA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 {% endblock %}
