@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+import datetime
 
 def game(request):
     return render(request, 'Home.html')
@@ -27,4 +27,4 @@ def how(request):
     return render(request, 'How.html')
 
 def twitter(request):
-    return(request, 'Twitter.html')
+    return render(request, 'Twitter.html')
