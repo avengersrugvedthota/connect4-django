@@ -30,6 +30,7 @@ urlpatterns = [
     path('age/', views.age, name='age'),
     path('howtoplay/', views.how, name='how'),
     path('tweets/', views.twitter, name='tweets'),
+    path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('blog/', include('blog.urls')),
 ]
 
