@@ -24,6 +24,8 @@ handler404 = 'game.views.error404'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.game, name='home'),
+    path('connect4/', views.connect4, name='game4'),
+    path('tictactoe/', views.tic, name='tic'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),

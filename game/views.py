@@ -1,7 +1,13 @@
 from django.shortcuts import render
 
 def game(request):
+    return render(request, 'mhome.html')
+
+def connect4(request):
     return render(request, 'Home.html')
+
+def tic(request):
+    return render(request, 'tictac.html')
 
 
 def privacy(request):
