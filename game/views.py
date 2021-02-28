@@ -9,6 +9,8 @@ def connect4(request):
 def tic(request):
     return render(request, 'tictac.html')
 
+def tennis(request):
+    return render(request, 'tennis.html')
 
 def privacy(request):
     return render(request, 'Privacy Policy.html')

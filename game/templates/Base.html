@@ -27,8 +27,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Connect 4</title>
-    <link rel="icon" href="{% static 'download.png' %}" type="image/icon type">
+    <title>Online Games</title>
+    <link rel="icon" href="{% static 'download1.png' %}" type="image/icon type">
 
 <style media="screen">
     .loader {
@@ -107,6 +107,7 @@ a:link, a:visited {
     <ul class="dropdown-menu" >
       <li><a style="color: black;" class="dropdown-item" href="{% url 'game4' %}">Connect 4</a></li>
       <li><a style="color: black;" class="dropdown-item" href="{% url 'tic' %}">Tic Tac Toe</a></li>
+      <li><a style="color: black;" class="dropdown-item" href="{% url 'chess' %}">Tennis</a></li>
     </ul>
   </div>
 <div class="dropend">

@@ -1,17 +1,7 @@
 {% extends 'Base.html' %} {% load static %} {% block content %}
 <div class="container">
-<div class="card" style="width: 18rem;">
-  <img src="{% static 'download.png' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Connect 4</h5>
-    <p class="card-text">Connect 4 game (8 X 6)</p>
-    <a href="{% url 'game4' %}" class="btn btn-primary">Play</a>
-  </div>
-</div>
-</div>
 
-<div class="container">
-<div class="card" style="width: 18rem;">
+<div class="card text-white bg-dark mb-3" style="width: 18rem;">
   <img src="{% static '1177409.png' %}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Tic Tac Toe</h5>
@@ -19,6 +9,26 @@
     <a href="{% url 'tic' %}" class="btn btn-primary">Play</a>
     </div>
   </div>
+
+<br>
+<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+  <img src="{% static 'download.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Connect 4</h5>
+    <p class="card-text">Connect 4 game (8 X 6)</p>
+    <a href="{% url 'game4' %}" class="btn btn-primary">Play</a>
+    </div>
+    </div>
+
+<br>
+<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+  <img src="{% static 'download.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Tennis</h5>
+    <p class="card-text">Tennis With Computer</p>
+    <a href="{% url 'game4' %}" class="btn btn-primary">Play</a>
+    </div>
+  </div>
 </div>
-</div>
+
 {% endblock %}
