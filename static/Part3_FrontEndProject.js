@@ -1,171 +1,270 @@
-// We need to use jQuery for the following:
+var COLUMNS = 7;
+var ROWS = 6;
+var player1 = "Player 1";
+var player2 = "Player 2";
+var playerTurn = player1;
 
-var player1 = "Player 1 (Blue)";
-var player1Color = 'rgb(86, 151, 255)';
-
-var player2 = "Player 2 (Red)";
-var player2Color = 'rgb(237, 45, 73)';
-
-var game_on = true;
-var table = $('table tr');
-
-// http://stackoverflow.com/questions/6139407/getting-td-by-index-with-jquery
-function reportWin(rowNum,colNum) {
-  console.log("You won starting at this row,col");
-  console.log(rowNum);
-  console.log(colNum);
-}
-// Change the color of a button
-function changeColor(rowIndex,colIndex,color) {
-  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color',color);
+window.onload = function() {
+	console.log("Window loaded");
+	makeBoard(COLUMNS,ROWS);
+	updatePlayerOnScreen();
 }
 
-// Report Back to current color of a button
-function returnColor(rowIndex,colIndex) {
-  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color');
+function makeBoard(cols, rows) {
+	createArrows(cols);
+	createRows(cols, rows);
 }
 
-// Take in column index, returns the bottom row that is still gray
-function checkBottom(colIndex) {
-  var colorReport = returnColor(5,colIndex);
-  for (var row = 5; row > -1; row--) {
-    colorReport = returnColor(row,colIndex);
-    if (colorReport === 'rgb(128, 128, 128)') {
-      return row
-    }
-  }
+function createArrows() {
+	var table = document.getElementById("board");
+	var header = table.createTHead();
+	var row = header.insertRow(0);
+	for (var i=0; i < COLUMNS; i++) {
+		row.insertCell(i).innerHTML = '<button class="columnSelector" type="button" onclick="makeMove(this.parentElement.cellIndex)"><div class="arrow-down"></div></button>';
+	}
 }
 
-// Check to see if 4 inputs are the same color
-function colorMatchCheck(one,two,three,four){
-  return (one===two && one===three && one===four && one !== 'rgb(128, 128, 128)' && one !== undefined);
+function createRows() {
+	var table = document.getElementById("board").getElementsByTagName('tbody')[0];
+	for(var i=0; i < ROWS; i++) {
+		var row = table.insertRow(i);
+		for(var j=0; j < COLUMNS; j++) {
+			row.insertCell(j).innerHTML = '<div class="slot"></div>';
+		}
+	}
 }
 
-// Check for Horizontal Wins
-function horizontalWinCheck() {
-  for (var row = 0; row < 6; row++) {
-    for (var col = 0; col < 4; col++) {
-      if (colorMatchCheck(returnColor(row,col), returnColor(row,col+1) ,returnColor(row,col+2), returnColor(row,col+3))) {
-        console.log('horiz');
-        reportWin(row,col);
-        return true;
-      }else {
-        continue;
-      }
-    }
-  }
+function makeMove(col) {
+	selectColumn(col);
+	if (playerTurn == "Computer") {
+		var computerCol = computerMove();
+		selectColumn(computerCol);
+	}
 }
 
-// Check for Vertical Wins
-function verticalWinCheck() {
-  for (var col = 0; col < 7; col++) {
-    for (var row = 0; row < 3; row++) {
-      if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col) ,returnColor(row+2,col), returnColor(row+3,col))) {
-        console.log('vertical');
-        reportWin(row,col);
-        return true;
-      }else {
-        continue;
-      }
-    }
-  }
+function selectColumn(col) {
+	var row = dropSuccessful(col);
+	if (row != -1) {
+		if (!checkForVictory(row, col)) {
+			changePlayer();
+		}
+	}
 }
 
-// Check for Diagonal Wins
-function diagonalWinCheck() {
-  for (var col = 0; col < 5; col++) {
-    for (var row = 0; row < 7; row++) {
-      if (colorMatchCheck(returnColor(row,col), returnColor(row+1,col+1) ,returnColor(row+2,col+2), returnColor(row+3,col+3))) {
-        console.log('diag');
-        reportWin(row,col);
-        return true;
-      }else if (colorMatchCheck(returnColor(row,col), returnColor(row-1,col+1) ,returnColor(row-2,col+2), returnColor(row-3,col+3))) {
-        console.log('diag');
-        reportWin(row,col);
-        return true;
-      }else {
-        continue;
-      }
-    }
-  }
+function changePlayer() {
+	if (playerTurn == player1) {
+		playerTurn = player2;
+	} else {
+		playerTurn = player1;
+	}
+	updatePlayerOnScreen();
+
 }
 
-
-// Game End
-function gameEnd(winningPlayer) {
-  for (var col = 0; col < 7; col++) {
-    for (var row = 0; row < 7; row++) {
-      $('h3').fadeOut('fast');
-      $('h2').fadeOut('fast');
-      $('h1').text(winningPlayer+" has won! Refresh your browser to play again!").css("fontSize", "50px")
-    }
-  }
+function updatePlayerOnScreen() {
+	document.getElementById('Player').innerHTML = playerTurn;
 }
 
-// Start with Player One
-var currentPlayer = 1;
-var currentName = player1;
-var currentColor = player1Color;
+function getPlayerColour() {
+	if (playerTurn == player1) {
+		return "#ff0000";
+	} else {
+		return "#ffef00";
+	}
+}
 
-// Start with Player One
-$('h3').text("Player 1 (Blue)"+": it is your turn, please pick a column to drop your blue chip.");
+function dropSuccessful(col) {
+	var table = document.getElementById("board");
+	for(var i=ROWS; i >= 1; i--) {
+		var slot = table.rows[i].cells[col].children[0];
+		var hexValue = getHexColour(window.getComputedStyle(slot, null).getPropertyValue('background-color'));
+		if (hexValue == '#d3d3d3') {
+			console.log('setting colour');
+			slot.style.backgroundColor = getPlayerColour();
+			return i;
+		}
+	}
+	return -1;
+}
 
-$('.board button').on('click',function() {
+function getHexColour( color ){
+    //if color is already in hex, just return it...
+    if( color.indexOf('#') != -1 ) return color;
 
-  // Recognize what column was chosen
-  var col = $(this).closest("td").index();
+    //leave only "R,G,B" :
+    color = color
+                .replace("rgba", "")
+                .replace("rgb", "")
+                .replace("(", "")
+                .replace(")", "");
+    color = color.split(","); // get Array["R","G","B"]
 
-  // Get back bottom available row to change
-  var bottomAvail = checkBottom(col);
+    // 0) add leading #
+    // 1) add leading zero, so we get 0XY or 0X
+    // 2) append leading zero with parsed out int value of R/G/B
+    //    converted to HEX string representation
+    // 3) slice out 2 last chars (get last 2 chars) => 
+    //    => we get XY from 0XY and 0X stays the same
+    return  "#"
+            + ( '0' + parseInt(color[0], 10).toString(16) ).slice(-2)
+            + ( '0' + parseInt(color[1], 10).toString(16) ).slice(-2)
+            + ( '0' + parseInt(color[2], 10).toString(16) ).slice(-2);
+}
 
-  // Drop the chip in that column at the bottomAvail Row
-  changeColor(bottomAvail,col,currentColor);
+function resetGame() {
+	var table = document.getElementById("board");
+	for(var i=0; i < ROWS+1; i++) {
+		var row = table.deleteRow();
+	}
+	createArrows();
+	createRows();
+	playerTurn = player1;
+	updatePlayerOnScreen();
+	$('.overlay').show();
+}
 
-  // Check for a win or a tie.
-  if (horizontalWinCheck() || verticalWinCheck() || diagonalWinCheck()) {
-    gameEnd(currentName);
-  }
+function checkForVictory(row, col) {
+	if (horizontalWin(row, col) || diagonalWin() || verticalWin(row, col)) {
+		disableButtons();
+		displayWinner();
+		return true;
+	}
+	return false;
+}
 
-  // If no win or tie, continue to next player
-  currentPlayer = currentPlayer * -1 ;
+function displayWinner() {
+	var player = playerTurn;
+	alert(player +" wins!");
+}
 
-  // Re-Check who the current Player is.
-  if (currentPlayer === 1) {
-    currentName = player1;
-    $('h3').text("Player 1 (Blue)"+": it is your turn, please pick a column to drop your blue chip.");
-    currentColor = player1Color;
-  }else {
-    currentName = player2
-    $('h3').text("Player 2 (Red)"+": it is your turn, please pick a column to drop your red chip.");
-    currentColor = player2Color;
-  }
+function disableButtons() {
+	var buttons = document.getElementsByClassName('columnSelector');
+	for (var i=0; i < buttons.length; i++) {
+		buttons[i].disabled = true;
+	}
+}
 
-})
+function horizontalWin(row, col) {
+	var table = document.getElementById('board');
+	var colour = getPlayerColour();
+	var count = 0;
+	for (var i=0; i < COLUMNS; i++) {
+		var slot = table.rows[row].cells[i].children[0];
+		var hexValue = getHexColour(window.getComputedStyle(slot, null).getPropertyValue('background-color'));
+		if (hexValue == colour) {
+			count++;
+			if (count >=4) {
+				return true;
+			}
+		} else {
+			count = 0;
+		}
+	}
+	return false;
+	
+}
 
+function diagonalWin() {
+	var count = 0;
+	
+	//Check down-right on upper triangle of board
+	for (var col=COLUMNS-1; col >= 0; col--) {
+		if (tallyDiagonalDownRight(1, col)) return true;
+	}
+	
+	//Check down-right on lower triangle of board
+	for (var row=ROWS; row >= 1; row--) {
+		if(tallyDiagonalDownRight(row, 0)) return true;
+	}
+	
+	//Check up-right on upper triangle of board
+	for (var col=COLUMNS-1; col >= 0; col--) {
+		if (tallyDiagonalUpRight(ROWS, col)) return true;
+	}
+	
+	//Check up-right on lower triangle of board
+	for (var row=1; row < ROWS; row++) {
+		if(tallyDiagonalUpRight(row, 0)) return true;
+	}
+	
+	return false;
+}
 
+function tallyDiagonalDownRight(startRow, startCol) {
+	var current_row = startRow;
+	var current_col = startCol;
+	var table = document.getElementById('board');
+	var colour = getPlayerColour();
+	var count = 0;
+	while (current_row <= ROWS && current_col < COLUMNS) {
+		var slot = table.rows[current_row].cells[current_col].children[0];
+		var hexValue = getHexColour(window.getComputedStyle(slot, null).getPropertyValue('background-color'));
+		if (hexValue == colour) {
+			count++;
+			if (count >=4) {
+				return true;
+			}
+		} else {
+			count = 0;
+		}
+		current_row++;
+		current_col++;
+	}
+	return false;
+}
 
-// Helper function to help you understand Rows and Columns From A Table
-// http://stackoverflow.com/questions/788225/table-row-and-column-number-in-jquery
-//
-// $('.board button').on('click',function(){
-//   // This is the Column Number (starts at zero):
-//   console.log('This is the Column:');
-//   console.log($(this).closest("td").index());
-//   // This is the Row Number:
-//   console.log("This is the Row:");
-//   console.log($(this).closest("tr").index());
-//   console.log('\n');
-//   // This is a way to grab a particular cell (replace):
-//   // $('table').eq(rowIndex).find('td').eq(colIndex)
-// });
+function tallyDiagonalUpRight(startRow, startCol) {
+	var current_row = startRow;
+	var current_col = startCol;
+	var table = document.getElementById('board');
+	var colour = getPlayerColour();
+	var count = 0;
+	while (current_row > 0 && current_col < COLUMNS) {
+		var slot = table.rows[current_row].cells[current_col].children[0];
+		var hexValue = getHexColour(window.getComputedStyle(slot, null).getPropertyValue('background-color'));
+		if (hexValue == colour) {
+			count++;
+			if (count >=4) {
+				return true;
+			}
+		} else {
+			count = 0;
+		}
+		current_row--;
+		current_col++;
+	}
+	return false;
+}
 
-// // Change color on click
-// $('.board button').on('click',function() {
-//   if($(this).css('background-color') === 'rgb(51, 51, 51)'){
-//     $(this).css('background-color','rgb(86, 151, 255)');
-//   }else if ($(this).css('background-color') === 'rgb(86, 151, 255)'){
-//     $(this).css('background-color','rgb(237, 45, 73)');
-//   }else{
-//     $(this).css('background-color','rgb(51, 51, 51)');
-//   }
-// });
+function verticalWin(row, col) {
+	var table = document.getElementById('board');
+	var colour = getPlayerColour();
+	var count = 0;
+	for (var i=0; i < ROWS; i++) {
+		var slot = table.rows[i+1].cells[col].children[0];
+		var hexValue = getHexColour(window.getComputedStyle(slot, null).getPropertyValue('background-color'));
+		if (hexValue == colour) {
+			count++;
+			if (count >=4) {
+				return true;
+			}
+		} else {
+			count = 0;
+		}
+	}
+	return false;
+}
+
+//Computer makes a random move
+function computerMove() {
+	return Math.floor(Math.random() * COLUMNS)
+}
+
+function closeOverlay(id) {
+	if (id == "Computer") {
+		player2 = "Computer";
+	} else {
+		player2 = "Player 2";
+	}
+	$('.overlay').hide();
+}
