@@ -1,5 +1,12 @@
 {% extends 'Base.html' %} {% load static %} {% block content %}
 
+<style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 
 <h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
 
@@ -13,23 +20,9 @@
     </a>
     <h5 class="text-muted">{{ blog.date|date:'M d Y'|upper }}</h5>
     <h4>{{ blog.description|striptags|truncatechars:100 }}</h4>
+    <img src="{{ blog.image }}" class="center">
 <hr>
 
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
- <br>
   </div>
 </div>
 {% endfor %}
