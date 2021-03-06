@@ -2,20 +2,19 @@
 <html lang="en">
 {% load static %}
 
-<head class="h-100 bg-primary">
+<head>
 
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+
+<link rel="stylesheet" href="{% static 'style.css' %}"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="apple-itunes-app" content="app-id=1552002492">
-
 <script async defer data-domain="rugvedconnect4.pythonanywhere.com" src="https://plausible.io/js/plausible.js"></script>
-
   </head>
-
-  </body>
+<!--Not Start-->
   		<script>
 			$(document).ready(function() {
 				var progressPath = document.querySelector('.progress-wrap path');
@@ -54,11 +53,7 @@
 				})
 			});
 		</script>
-		<div class="progress-wrap">
-			<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-			</svg>
-		</div>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D18CGRGFW1"></script>
 <script>
@@ -72,6 +67,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -120,9 +116,9 @@
 </head>
 
 <!--complete head-->
-<body class="h-100 bg-primary">
+<body>
 
-        <div class="bg-primary">
+        <div>
 
 
 </style>
@@ -133,7 +129,6 @@ a:link, a:visited {
   text-decoration: none;
   display: inline-block;
 }
-
 </style>
 <script src="//code.tidio.co/lq42giw3cvs4d6jziuayfk3cuvsg0l5n.js" async></script>
     <div class="loader">
@@ -143,6 +138,14 @@ a:link, a:visited {
     loader.className += " hidden"; // class "loader hidden"
 });</script>
 </div>
+
+		<div class="progress-wrap">
+			<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+			</svg>
+		</div>
+
+
 
 
 <!--start-->
@@ -182,7 +185,11 @@ a:link, a:visited {
         </div>
 
         <span onclick="openNav()" class="open" id="open">&#9776</span>
-
+<style>
+body{
+    background-color: rgb(214, 228, 92);
+}
+</style>
     </div>
 
    <script>
@@ -202,7 +209,6 @@ a:link, a:visited {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </div>
-    <script src="app.js"></script>
 </body>
 
 </html>

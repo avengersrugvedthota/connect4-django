@@ -2,6 +2,12 @@
     background-color: red; color: black;
 }
 
+
+
+body{
+  background: #252839;
+}
+
 .wrapper {
     text-align: center;
 }
@@ -216,3 +222,4 @@ body {
 .winning-message.show {
   display: flex;
 }
+
