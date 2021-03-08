@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+<link rel="stylesheet" href="{% static 'm.css' %}"/>
 
 <link rel="stylesheet" href="{% static 'style.css' %}"/>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -117,7 +117,7 @@
 
 <!--complete head-->
 <body>
-
+<section>
         <div>
 
 
@@ -204,6 +204,9 @@ body{
         }
     </script>
     {% block content %}{% endblock %}
+    </section>
+    <div class="cursor"></div>
+    <script src="{% static 's.js' %}"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

@@ -1,11 +1,13 @@
-{% extends 'Base.html' %} {% load static %} {% block content %}
+{% extends 'Base.html' %} {% block content %} {% load static %}
   <link rel="stylesheet" href="{% static 'main.css' %}">
 
 <style>
 html {
   scroll-behavior: smooth;
 }
+
 section {
+    z-index: -1;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -16,7 +18,7 @@ section {
   background-color: rgb(214, 228, 92);
 }
 #sec-2 {
-  background-color: aliceblue;
+  background-color: rgb(214, 228, 92);
 }
 .scroll-down {
   height: 50px;
