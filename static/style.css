@@ -19,11 +19,12 @@
 }
 
 .btn_one:hover {
+    color: green;
     opacity: 0.8;
 }
 
 .open {
-    color: white;
+    color: green;
     font-size: 30px;
     float: left;
     padding-left: 1em;

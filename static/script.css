@@ -77,8 +77,8 @@
     top: 35vh;
     text-align: center;
     z-index: 11;
-    /* border: 2px darkgray solid;
-    border-radius: 5px; */
+     border: 2px darkgray solid;
+    border-radius: 5px;
     background-color: #daa520eb;
 
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);

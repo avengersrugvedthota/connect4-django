@@ -5,8 +5,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* border: 2px solid white; */
-    /* background-color: rgba(255, 255, 255, 0.356); */
+     border: 2px solid red;
+     background-color: rgba(255, 255, 255, 0.356);
     height: 30px;
     width: 30px;
     border-radius: 50px;
@@ -21,7 +21,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: red;
     height: 10px;
     width: 10px;
     border-radius: 50px;
@@ -33,7 +33,7 @@
 
 .cursor.click::before {
     animation: click 1s ease forwards;
-    background-color: rgb(255, 255, 255);
+    background-color: red;
 }
 
 @keyframes click {
