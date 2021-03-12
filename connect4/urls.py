@@ -34,6 +34,7 @@ urlpatterns = [
     path('howtoplay/', views.how, name='how'),
     path('tweets/', views.twitter, name='tweets'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
+    path('AboutOurWeb/', views.our, name='our'),
     path('blog/', include('blog.urls')),
 ]
 
