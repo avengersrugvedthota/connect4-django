@@ -23,6 +23,14 @@ handler404 = 'game.views.error404'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #Auth
+    path('signup/', views.signupuser, name='signupuser'),
+    path('login/', views.loginuser, name='loginuser'),
+    path('logout/', views.logoutuser, name='logoutuser'),
+
+    #Games Stuff
+
     path('', views.game, name='home'),
     path('connect4/', views.connect4, name='game4'),
     path('tictactoe/', views.tic, name='tic'),
@@ -32,7 +40,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('age/', views.age, name='age'),
     path('howtoplay/', views.how, name='how'),
-    path('tweets/', views.twitter, name='tweets'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('AboutOurWeb/', views.our, name='our'),
     path('blog/', include('blog.urls')),

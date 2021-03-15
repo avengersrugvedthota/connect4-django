@@ -1,5 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class Game(models.Model):
-    url = models.URLField(max_length=2048)
-    image = models.ImageField(upload_to='game/images', blank=True)
+class OnlineGames(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

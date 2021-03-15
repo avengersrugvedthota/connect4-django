@@ -1,16 +1,12 @@
-{% extends "Base.html" %}
+{% extends 'Base.html' %}
 {% load static %}
-
 {% block content %}
+
         <div class="container">
-            <h1 style="text-align:center;">Oops!</h1>
-            <h2 style="text-align:center;">We couldn't find the page you were looking for. 😓 </h2>
-
-            <h3 style="text-align:center;">Maybe we lost it. It'll be up again if it existed before.</h3>
-            <br>
-            <h5 style="text-align:center;">Meanwhile, could you try retyping the address? If you see this page again and please contact us.</h5>
-
-
+            <img src="{% static '404.jpg' %}" alt="404" width="500" height="500">
+            <h1>404 Error</h1>
+            <p>Page Not Found</p>
+            <h6>Go To <a href="{% url 'home' %}">Home</a> page</h6>
         </div>
 
 {% endblock %}
