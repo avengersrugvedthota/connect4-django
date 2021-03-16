@@ -11,9 +11,6 @@ def game(request):
 def connect4(request):
     return render(request, 'Home.html')
 
-def tic(request):
-    return render(request, 'tictac.html')
-
 def w(request):
     return render(request, 'wack.html')
 

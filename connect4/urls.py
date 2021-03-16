@@ -33,7 +33,6 @@ urlpatterns = [
 
     path('', views.game, name='home'),
     path('connect4/', views.connect4, name='game4'),
-    path('tictactoe/', views.tic, name='tic'),
     path('wackthemolegame/', views.w, name='wack'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
