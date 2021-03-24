@@ -31,17 +31,20 @@ urlpatterns = [
 
     #Games Stuff
 
-    path('', views.game, name='home'),
+    path('', views.game, name='b'),
     path('connect4/', views.connect4, name='game4'),
-    path('wackthemolegame/', views.w, name='wack'),
+    path('wackthemolegame/', views.start, name='s'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
     path('age/', views.age, name='age'),
     path('howtoplay/', views.how, name='how'),
+    path('TweetsByMe/', views.twitter, name='t'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('AboutOurWeb/', views.our, name='our'),
+    path('wackthemole/game', views.w, name='wack'),
     path('blog/', include('blog.urls')),
+    path('createyourrandompassword/', include('password.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

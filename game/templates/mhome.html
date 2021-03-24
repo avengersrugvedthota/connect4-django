@@ -1,6 +1,10 @@
 {% extends 'Base.html' %} {% block content %} {% load static %}
   <link rel="stylesheet" href="{% static 'main.css' %}">
-
+<style>
+    a:link{
+        isolation: isolate;
+    }
+</style>
 <style>
 html {
   scroll-behavior: smooth;

@@ -1,3 +1,4 @@
 ::selection {
-    background-color: aliceblue; color: red;
+    isolation: isolate;
+    color: blue;
 }

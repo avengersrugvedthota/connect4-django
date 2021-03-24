@@ -103,7 +103,7 @@ function getHexColour( color ){
     // 1) add leading zero, so we get 0XY or 0X
     // 2) append leading zero with parsed out int value of R/G/B
     //    converted to HEX string representation
-    // 3) slice out 2 last chars (get last 2 chars) => 
+    // 3) slice out 2 last chars (get last 2 chars) =>
     //    => we get XY from 0XY and 0X stays the same
     return  "#"
             + ( '0' + parseInt(color[0], 10).toString(16) ).slice(-2)
@@ -134,7 +134,7 @@ function checkForVictory(row, col) {
 
 function displayWinner() {
 	var player = playerTurn;
-	alert(player +" wins!");
+	alert(player +" wins! refresh Your Browser to play again");
 }
 
 function disableButtons() {
@@ -161,32 +161,32 @@ function horizontalWin(row, col) {
 		}
 	}
 	return false;
-	
+
 }
 
 function diagonalWin() {
 	var count = 0;
-	
+
 	//Check down-right on upper triangle of board
 	for (var col=COLUMNS-1; col >= 0; col--) {
 		if (tallyDiagonalDownRight(1, col)) return true;
 	}
-	
+
 	//Check down-right on lower triangle of board
 	for (var row=ROWS; row >= 1; row--) {
 		if(tallyDiagonalDownRight(row, 0)) return true;
 	}
-	
+
 	//Check up-right on upper triangle of board
 	for (var col=COLUMNS-1; col >= 0; col--) {
 		if (tallyDiagonalUpRight(ROWS, col)) return true;
 	}
-	
+
 	//Check up-right on lower triangle of board
 	for (var row=1; row < ROWS; row++) {
 		if(tallyDiagonalUpRight(row, 0)) return true;
 	}
-	
+
 	return false;
 }
 

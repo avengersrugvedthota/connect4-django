@@ -32,6 +32,11 @@ def age(request):
 def how(request):
     return render(request, 'How.html')
 
+def twitter(request):
+    return render(request, 't.html')
+
+def start(request):
+    return render(request, 's.html')
 
 def privacyapp(request):
     return render(request, 'Privacy Policy Android.html')
@@ -39,6 +44,8 @@ def privacyapp(request):
 def our(request):
     return render(request, 'ourweb.html')
 
+def c(request):
+    return render(request, 'chess.html')
 
 def error404(request, exception):
     return render(request, '404.html')
@@ -64,7 +71,7 @@ def loginuser(request):
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
-            return render(request, 'loginuser.html', {'form':AuthenticationForm(), 'error':'Username and password did not match'})
+            return render(request, 'loginuser.html', {'form':AuthenticationForm(), 'error':'Username or password did not match'})
         else:
             login(request, user)
             return redirect('home')
