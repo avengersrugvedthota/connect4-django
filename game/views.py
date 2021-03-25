@@ -41,6 +41,7 @@ def start(request):
 def privacyapp(request):
     return render(request, 'Privacy Policy Android.html')
 
+
 def our(request):
     return render(request, 'ourweb.html')
 

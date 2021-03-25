@@ -31,9 +31,9 @@ urlpatterns = [
 
     #Games Stuff
 
-    path('', views.game, name='b'),
+    path('', views.game, name='home'),
     path('connect4/', views.connect4, name='game4'),
-    path('wackthemolegame/', views.start, name='s'),
+    path('wackthemole/', views.w, name='s'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
@@ -42,7 +42,7 @@ urlpatterns = [
     path('TweetsByMe/', views.twitter, name='t'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('AboutOurWeb/', views.our, name='our'),
-    path('wackthemole/game', views.w, name='wack'),
+    path('wackthemole/about', views.start, name='wack'),
     path('blog/', include('blog.urls')),
     path('createyourrandompassword/', include('password.urls')),
 ]

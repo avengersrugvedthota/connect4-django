@@ -1,0 +1,22 @@
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gi{
+    isolation: isolate;
+}
+
+.glass {
+    isolation: isolate;
+  background: white;
+  min-height: 80vh;
+  width: 60%;
+  background: blue;
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  display: flex;
+}

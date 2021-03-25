@@ -1,5 +1,9 @@
 {% extends 'Base.html' %} {% load static %} {% block content %}
-
+<style>
+    input{
+        isolation: isolate;
+    }
+</style>
 <div class="text-center">
     <h1>Password Generator</h1>
 
@@ -14,11 +18,11 @@
       <option value="14">14</option>
     </select> Length
         <br>
-        <input type="checkbox" name="uppercase"> Uppercase
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" name="uppercase"> Uppercase
         <br>
-        <input type="checkbox" name="numbers"> Numbers
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" name="numbers"> Numbers
         <br>
-        <input type="checkbox" name="special"> Special Characters
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" name="special"> Special Characters
         <br>
 
         <input type="submit" value="Generate Password" class=" btn btn-primary">
