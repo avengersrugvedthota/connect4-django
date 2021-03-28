@@ -134,7 +134,11 @@ function checkForVictory(row, col) {
 
 function displayWinner() {
 	var player = playerTurn;
-	alert(player +" wins! refresh Your Browser to play again");
+	swal({
+  title: player,
+  text: " wins! refresh Your Browser to play again!",
+  icon: "success",
+});
 }
 
 function disableButtons() {
