@@ -1,7 +1,7 @@
 var COLUMNS = 7;
 var ROWS = 6;
-var player1 = "Player 1";
-var player2 = "Player 2";
+var player1 = "Player 1 (You)";
+var player2 = "Player 2 (Opponent Or Computer)";
 var playerTurn = player1;
 
 window.onload = function() {
@@ -134,11 +134,13 @@ function checkForVictory(row, col) {
 
 function displayWinner() {
 	var player = playerTurn;
-	swal({
-  title: player,
-  text: " wins! refresh Your Browser to play again!",
-  icon: "success",
-});
+	if (player == player2){
+	    swal(player + ' Has Won' , ' refresh(F5) to play again' , "error")
+	}
+	else (
+    swal(player + ' Has Won' , ' refresh(F5) to play again' , "success")
+    )
+
 }
 
 function disableButtons() {

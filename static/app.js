@@ -42,7 +42,7 @@ function countDown() {
 
   if(currentTime === 0 ) {
     clearInterval(timerId)
-    swal('GAME OVER! Your final score is ' + result + ' refresh(F5) to play again')
+    swal("GAME OVER! Your final score is " , result + ' refresh(F5) to play again' , "success")
   }
 }
 
