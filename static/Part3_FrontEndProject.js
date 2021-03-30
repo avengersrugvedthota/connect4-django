@@ -1,7 +1,7 @@
 var COLUMNS = 7;
 var ROWS = 6;
-var player1 = "Player 1 (You)";
-var player2 = "Player 2 (Opponent Or Computer)";
+var player1 = "Player 1";
+var player2 = "Player 2";
 var playerTurn = player1;
 
 window.onload = function() {
