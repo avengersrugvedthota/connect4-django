@@ -1,0 +1,26 @@
+{% extends 'Base.html' %} {% load static %} {% block content %}
+    <link rel="stylesheet" href="{% static 'cardstyle.css' %}">
+    <div class="container">
+        <div class="card">
+            <div class="circle">
+                <h2>Connect-4</h2>
+            </div>
+            <div class="content">
+                <p>Connect 4 With Computer And Human</p>
+                <a href="{% url 'game4' %}">Play</a>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="circle">
+                <h2>Whack The Mole</h2>
+            </div>
+            <div class="content">
+                <p>Wack The Mole</p>
+                <a href="{% url 'wack' %}">Play</a>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

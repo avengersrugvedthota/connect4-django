@@ -3,6 +3,47 @@
 {% load static %}
 
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(45deg, #ffaf00, #bb02ff);
+}
+.service_heading {
+	text-transform: uppercase;
+	position: relative;
+}
+
+.service_heading:after {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0%;
+	height: auto;
+	border-bottom: 3px solid #3e4555;
+	transition: all 0.3s linear;
+}
+
+.service_heading:hover:after {
+	width: 20%
+}
+
+
+.service {
+	color: #8d97ad;
+	font-weight: 300;
+}
+
+.service h1, .service h2, .service h3, .service h4, .service h5, .service h6 {
+	color: #3e4555;
+}
+    </style>
 <!--Sweet Alet-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -72,6 +113,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We Have Games Like Connect-4 And Whack The Mole, They Are Very Nice You Also Would Like Our Online Games Website :D">
     <link rel="stylesheet" href="{% static 'style.css' %}">
         <link rel="stylesheet" href="{% static 'styles.css' %}">
 
@@ -170,25 +212,15 @@
 <img src="{% static 'Play-Games-icon.png' %}" width="30" height="30">
         <span>Online Games</span>
     </a>
-         <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Games
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-      <li><a style="color: white;" class="dropdown-item" href="{% url 'game4' %}">Connect 4</a></li>
-      <li><a style="color: white;" class="dropdown-item" href="{% url 'wack' %}">Wack The Mole</a></li>
-          </ul>
-        </li>
-      </ul>
+                        <a class="nav-link" href="{% url 'g' %}">Games</a>
         <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Privacy Policy
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-<li><a style="color: black;" class="dropdown-item" href="{% url 'privacy' %}"> Privacy Policy Web</a></li>
-      <li><a style="color: black;" class="dropdown-item" href="{% url 'app' %}">Privay Policy Android App</a></li>
+<li><a style="color: white;" class="dropdown-item" href="{% url 'privacy' %}"> Privacy Policy Web</a></li>
+      <li><a style="color: white;" class="dropdown-item" href="{% url 'app' %}">Privay Policy Android App</a></li>
           </ul>
         </li>
       </ul>
@@ -198,8 +230,8 @@
                         <a class="nav-link" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
                         <a class="nav-link" aria-current="page" href="{% url 'how' %}">How To Play</a>
                         <a class="nav-link" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
-                        <a class="nav-link" href="{% url 'our' %}">Check About Our Website</a>
-                        <a class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a>
+                        <a class="nav-link" href="{% url 'our' %}">ScreenShots</a>
+
 
                         </ul>
                     <a href="#" onclick="$('#signOutBtn').click()" class="topnav-right nav-link">Logout <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><g><path d="M5,5h6c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h6c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H5V5z"/><path d="M20.65,11.65l-2.79-2.79C17.54,8.54,17,8.76,17,9.21V11h-7c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7v1.79 c0,0.45,0.54,0.67,0.85,0.35l2.79-2.79C20.84,12.16,20.84,11.84,20.65,11.65z"/></g></g></svg></a>
@@ -247,8 +279,7 @@
                         <a class="nav-link" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
                         <a class="nav-link" aria-current="page" href="{% url 'how' %}">How To Play</a>
                         <a class="nav-link" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
-                        <a class="nav-link" href="{% url 'our' %}">Check About Our Website</a>
-                        <a class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a>
+                        <a class="nav-link" href="{% url 'our' %}">ScreenShots</a>
 
                         </ul>
                         <a class="topnav-right nav-link" href="{% url 'loginuser' %}">Login <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M10.3,7.7L10.3,7.7c-0.39,0.39-0.39,1.01,0,1.4l1.9,1.9H3c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h9.2l-1.9,1.9 c-0.39,0.39-0.39,1.01,0,1.4l0,0c0.39,0.39,1.01,0.39,1.4,0l3.59-3.59c0.39-0.39,0.39-1.02,0-1.41L11.7,7.7 C11.31,7.31,10.69,7.31,10.3,7.7z M20,19h-7c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-7 c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7V19z"/></g></svg></a>
@@ -271,8 +302,7 @@
             percent.innerHTML = "Page Scrolled " + Math.round(progess) + "%"
         }
     </script>
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script src="{% static 'he.js' %}"></script>
+
 
 </body>
 

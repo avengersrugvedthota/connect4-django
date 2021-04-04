@@ -19,87 +19,11 @@ section {
   justify-content: center;
 }
 
-.scroll-down {
-  height: 50px;
-  width: 30px;
-  border: 2px solid green;
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  border-radius: 50px;
-  cursor: pointer;
-}
-.scroll-down::before,
-.scroll-down::after {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  height: 10px;
-  width: 10px;
-  transform: translate(-50%, -100%) rotate(45deg);
-  border: 2px solid green;
-  border-top: transparent;
-  border-left: transparent;
-  animation: scroll-down 1s ease-in-out infinite;
-}
-.scroll-down::before {
-  top: 30%;
-  animation-delay: 0.3s;
-  animation: scroll-down 1s ease-in-out infinite;
-}
-
-@keyframes scroll-down {
-  0% {
-     top:20%;
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    top: 90%;
-    opacity: 0;
-  }
-}
 
 </style>
-<section id="sec-1">
+<section>
   <div class="container">
     <h2 data-text="Welcome_To_Online_Games">Welcome_To_Online_Games</h2>
-    <a href="#sec-2">
-      <div class="scroll-down"></div>
-    </a>
   </div>
 </section>
-<section id="sec-2">
-  <div class="container">
-
-<br>
-<div class="card text-white bg-dark mb-3" style="width: 18rem;">
-  <img src="{% static 'download.png' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title hoverable">Connect 4</h5>
-    <p class="card-text">Connect 4 game (8 X 6)</p>
-    <a href="{% url 'game4' %}" class="btn btn-primary">Play</a>
-    <a href="https://play.google.com/store/apps/details?id=com.zappycode.helloworld">Android App</a>
-    </div>
-    </div>
-
-<br>
-<div class="card text-white bg-dark mb-3" style="width: 18rem;">
-  <img src="{% static '123.jpg' %}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title hoverable">Wack The Mole</h5>
-    <p class="card-text">Wack The Mole</p>
-    <a href="{% url 'wack' %}" class="btn btn-primary">Play</a>
-    </div>
-  </div>
-</div>
-
-</section>
-
 {% endblock %}

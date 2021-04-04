@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .models import OnlineGames
 from django.contrib.auth.decorators import login_required
+
 
 def game(request):
     return render(request, 'mhome.html')
@@ -17,10 +19,11 @@ def w(request):
 def privacy(request):
     return render(request, 'Privacy Policy.html')
 
+def onlogin(request):
+    return render(request, 'games.html')
 
 def rules(request):
     return render(request, 'rules.html')
-
 
 def about(request):
     return render(request, 'about.html')
@@ -52,6 +55,7 @@ def error404(request, exception):
     return render(request, '404.html')
 
 def signupuser(request):
+    accounts = OnlineGames.objects.all()
     if request.method == 'GET':
         return render(request, 'signupuser.html', {'form':UserCreationForm()})
     else:
@@ -60,7 +64,7 @@ def signupuser(request):
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('home')
+                return redirect('g')
             except IntegrityError:
                 return render(request, 'signupuser.html', {'form':UserCreationForm(), 'error':'That username has already been taken. Please choose a new username'})
         else:
@@ -72,10 +76,10 @@ def loginuser(request):
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
-            return render(request, 'loginuser.html', {'form':AuthenticationForm(), 'error':'Username or password did not match'})
+            return render(request, 'loginuser.html', {'form':AuthenticationForm(), 'error':'Username and password did not match'})
         else:
             login(request, user)
-            return redirect('home')
+            return redirect('g')
 
 @login_required
 def logoutuser(request):

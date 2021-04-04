@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Auth
+
     path('signup/', views.signupuser, name='signupuser'),
     path('login/', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
@@ -39,6 +40,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('age/', views.age, name='age'),
     path('howtoplay/', views.how, name='how'),
+    path('gamestoplay/', views.onlogin, name='g'),
     path('TweetsByMe/', views.twitter, name='t'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('AboutOurWeb/', views.our, name='our'),

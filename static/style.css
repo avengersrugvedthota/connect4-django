@@ -1,4 +1,5 @@
+
 ::selection {
     isolation: isolate;
-    color: blue;
+    color: blur(20px);
 }

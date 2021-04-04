@@ -127,7 +127,18 @@ STATIC_ROOT = os.path.join(BASE_DIR / 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
+LOGIN_URL = '/login'
+
+
 # try:
 #     from .local_settings import *
 # except ImportError:
 #     print("Looks like no local file you must be on production")
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-mail.outlook.com' # this is outlook smtp
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sender\'s email'
+EMAIL_HOST_PASSWORD = 'password'
