@@ -1,0 +1,13 @@
+{% load static %}
+
+    <title>Online Games</title>
+    <link rel="icon" href="{% static 'Play-Games-icon.png' %}" type="image/icon type">
+
+<link rel="stylesheet" href="{% static 'link1.css' %}">
+	<ul>
+		<li><a href="{% url 'home' %}" data-text="Home">Home</a></li>
+		<li><a href="{% url 's' %}" data-text="Get Started">Get Started</a></li>
+		<li><a href="{% url 'privacy' %}" data-text="Privacy Policy">Privacy Policy</a></li>
+		<li><a href="{% url 'loginuser' %}" data-text="Login">Login</a></li>
+		<li><a href="{% url 'signupuser' %}" data-text="Register">Register</a></li>
+	</ul>

@@ -3,14 +3,19 @@
 {% load static %}
 
 <style>
-    button{
-        isolation: isolate;
-    }
+    button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    border-style: none;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20;
+    background: #33FF00;
+}
 
 </style>
-<main>
-      <section class="glass">
-          <div class="gi">
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
             <h2 style="text-align:center;" class="service_heading">Login</h2>
@@ -35,7 +40,7 @@
 </div>
 
                 <br>
-                <button type="submit" class="btn btn-outline-info">Login</button>
+                <button type="submit">Login</button>
             </form>
             <hr>
             <div class="text-center">
@@ -44,7 +49,5 @@
             </div>
         </div>
     </div>
-    </div>
-    </section>
-    </main>
+
 {% endblock %}

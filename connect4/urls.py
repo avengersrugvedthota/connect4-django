@@ -34,6 +34,8 @@ urlpatterns = [
 
     path('', views.game, name='home'),
     path('connect4/', views.connect4, name='game4'),
+    path('wheretogo/', views.goto, name='go'),
+    path('wheretogo/1', views.nl, name='go1'),
     path('wackthemole/', views.w, name='s'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
@@ -41,6 +43,7 @@ urlpatterns = [
     path('age/', views.age, name='age'),
     path('howtoplay/', views.how, name='how'),
     path('gamestoplay/', views.onlogin, name='g'),
+    path('getstarted/', views.getstarted, name='s'),
     path('TweetsByMe/', views.twitter, name='t'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('AboutOurWeb/', views.our, name='our'),

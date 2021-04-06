@@ -56,7 +56,6 @@ body{
 <link rel="stylesheet" href="{% static 'style.css' %}"/>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="apple-itunes-app" content="app-id=1552002492">
-<script async defer data-domain="rugvedconnect4.pythonanywhere.com" src="https://plausible.io/js/plausible.js"></script>
   </head>
 <!--Not Start-->
   		<script>
@@ -201,45 +200,18 @@ body{
 <!--start-->
     {% if user.is_authenticated %}
 <style>
-    .topnav-right {
-  float: right;
+.topnav-right {
+  margin-right: 100px;
 }
 </style>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 <div class="container">
-<ul class="navbar-nav mr-auto">
-         <a class="navbar-brand" href="{% url 'home' %}">
-<img src="{% static 'Play-Games-icon.png' %}" width="30" height="30">
-        <span>Online Games</span>
-    </a>
-                        <a class="nav-link" href="{% url 'g' %}">Games</a>
-        <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Privacy Policy
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-<li><a style="color: white;" class="dropdown-item" href="{% url 'privacy' %}"> Privacy Policy Web</a></li>
-      <li><a style="color: white;" class="dropdown-item" href="{% url 'app' %}">Privay Policy Android App</a></li>
-          </ul>
-        </li>
-      </ul>
-
-                        <a class=" nav-link" aria-current="page" href="{% url 'rules' %}">Rules</a>
-                        <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
-                        <a class="nav-link" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
-                        <a class="nav-link" aria-current="page" href="{% url 'how' %}">How To Play</a>
-                        <a class="nav-link" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
-                        <a class="nav-link" href="{% url 'our' %}">ScreenShots</a>
-
-
-                        </ul>
+    <a href="{% url 'go' %}">Go To ---></a>
                     <a href="#" onclick="$('#signOutBtn').click()" class="topnav-right nav-link">Logout <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><g><path d="M5,5h6c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h6c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H5V5z"/><path d="M20.65,11.65l-2.79-2.79C17.54,8.54,17,8.76,17,9.21V11h-7c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7v1.79 c0,0.45,0.54,0.67,0.85,0.35l2.79-2.79C20.84,12.16,20.84,11.84,20.65,11.65z"/></g></g></svg></a>
                     <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
                         {% csrf_token %}
                         <button id="signOutBtn" type="submit">Logout</button>
                     </form>
-</ul>
 </div>
 </nav>
 
@@ -247,45 +219,11 @@ body{
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 <div class="container">
-<ul class="navbar-nav mr-auto">
-         <a class=" navbar-brand" href="{% url 'home' %}">
-<img src="{% static 'Play-Games-icon.png' %}" width="30" height="30">
-        <span>Online Games</span>
-    </a>
-         <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Games
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-      <li><a style="color: black;" class="dropdown-item" href="{% url 'game4' %}">Connect 4</a></li>
-      <li><a style="color: black;" class="dropdown-item" href="{% url 's' %}">Wack The Mole</a></li>
-          </ul>
-        </li>
-      </ul>
-        <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Privacy Policy
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-<li><a style="color: black;" class="dropdown-item" href="{% url 'privacy' %}"> Privacy Policy Web</a></li>
-      <li><a style="color: black;" class="dropdown-item" href="{% url 'app' %}">Privay Policy Android App</a></li>
-          </ul>
-        </li>
-      </ul>
-                        <a class=" nav-link" aria-current="page" href="{% url 'rules' %}">Rules</a>
-                        <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
-                        <a class="nav-link" aria-current="page" href="{% url 'age' %}">Age Restrictions</a>
-                        <a class="nav-link" aria-current="page" href="{% url 'how' %}">How To Play</a>
-                        <a class="nav-link" aria-current="page" target="_blank" href="https://plausible.io/share/QmIEqQx39jQYBL2GY32VN">Analytics</a>
-                        <a class="nav-link" href="{% url 'our' %}">ScreenShots</a>
 
-                        </ul>
-                        <a class="topnav-right nav-link" href="{% url 'loginuser' %}">Login <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M10.3,7.7L10.3,7.7c-0.39,0.39-0.39,1.01,0,1.4l1.9,1.9H3c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h9.2l-1.9,1.9 c-0.39,0.39-0.39,1.01,0,1.4l0,0c0.39,0.39,1.01,0.39,1.4,0l3.59-3.59c0.39-0.39,0.39-1.02,0-1.41L11.7,7.7 C11.31,7.31,10.69,7.31,10.3,7.7z M20,19h-7c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7c1.1,0,2-0.9,2-2V5c0-1.1-0.9-2-2-2h-7 c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7V19z"/></g></svg></a>
-                    <a class="topnav-right nav-link" href="{% url 'signupuser' %}">Register <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><rect fill="none" height="24" width="24"/></g><g><g><circle cx="12" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><path d="M11,18.07v1.43c0,0.28,0.22,0.5,0.5,0.5h1.4c0.13,0,0.26-0.05,0.35-0.15l5.83-5.83l-2.12-2.12l-5.81,5.81 C11.05,17.81,11,17.94,11,18.07z"/><path d="M12.03,14L14,12.03V12c0-1.1-0.9-2-2-2s-2,0.9-2,2s0.9,2,2,2H12.03z"/><path d="M20.85,11.56l-1.41-1.41c-0.2-0.2-0.51-0.2-0.71,0l-1.06,1.06l2.12,2.12l1.06-1.06C21.05,12.07,21.05,11.76,20.85,11.56z"/></g></g></svg></a>
-                        </div>
-                        </nav>
+<a href="{% url 'go1' %}">Go To ---></a>
+
+</div>
+</nav>
             {% endif %}
     {% block content %}{% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>

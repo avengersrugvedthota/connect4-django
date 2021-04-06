@@ -1,12 +1,21 @@
 {% extends 'Base.html' %} {% load static %} {% block content %}
 <style>
-    button{
-        isolation: isolate;
-    }
+    button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    border-style: none;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20;
+    background: #FF6600;
+}
+
 </style>
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
-            <h2 style="text-align:center;" class="service_heading">Sign Up</h2>
+            <h2 style="text-align:center;" class="service_heading">Register</h2>
         </div>
     </div>
     <div class="row justify-content-center mt-5">
@@ -33,7 +42,7 @@
 </div>
 
                 <br>
-                <button type="submit" class="btn btn-outline-info">Sign Up</button>
+                <button type="submit">Register</button>
                 <br>
 
             </form>

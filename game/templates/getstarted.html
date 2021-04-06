@@ -1,0 +1,37 @@
+{% extends 'Base.html' %} {% load static %} {% block content %}
+
+<style>
+    .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20;
+    background: #bb02ff;
+}
+
+
+    .button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20;
+    background: #ffaf00;
+}
+
+
+</style>
+<div class="container">
+<h1>To Get Started You First Need To Login</h1>
+
+<a class="button" href="{% url 'loginuser' %}">Login</a>
+<a class="button1" href="{% url 'signupuser' %}">Register</a>
+
+
+</div>
+{% endblock %}
