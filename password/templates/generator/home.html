@@ -1,6 +1,22 @@
-<title>Password Generator</title>
+{% extends 'Base.html' %} {% load static %} {% block content %}
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style>
+    .w {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000;
+    border-style: none;
+    color: #fff;
+    border-style: none;
+    border-radius: 40px;
+    text-decoration: none;
+    margin-top: 20;
+    background: #FF6600;
+}
+
+</style>
 
 <div class="container text-center">
 
@@ -26,6 +42,7 @@
         <input type="checkbox" name="special"> Special Characters
         <br>
 
-        <input type="submit" value="Generate Password" class="btn btn-primary">
+        <input type="submit" value="Generate Password" class="w">
     </form>
 </div>
+{% endblock %}
