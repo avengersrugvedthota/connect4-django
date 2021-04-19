@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+ul {
+    position: relative;
+    display: flex;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+ul li a .fa1 {
+    font-size: 6em;
+    color: #1da1f2;
+}
+
+ul li a .insta {
+    font-size: 6em;
+    color: #3f729b;
+}
+
+ul li a .you {
+    font-size: 6em;
+    color: #ff0000;
+}

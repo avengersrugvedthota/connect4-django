@@ -43,6 +43,12 @@ body{
 .service h1, .service h2, .service h3, .service h4, .service h5, .service h6 {
 	color: #3e4555;
 }
+
+@media(max-width: 991px){
+    #percent{
+        display: none;
+    }
+}
     </style>
 <!--Sweet Alet-->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -156,6 +162,12 @@ body{
     border: 1px solid black;
     margin: 10px;
 }
+@media(max-width: 991px){
+    .loader img{
+        width: 200px;
+        height: 200px;
+    }
+}
 </style>
 
 </head>
@@ -225,7 +237,9 @@ body{
 </div>
 </nav>
             {% endif %}
+            <mainbody>
     {% block content %}{% endblock %}
+    </mainbody>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 </div>

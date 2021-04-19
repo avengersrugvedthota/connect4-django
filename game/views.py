@@ -11,6 +11,10 @@ def game(request):
     return render(request, 'mhome.html')
 
 @login_required
+def s(request):
+    return render(request, 'social.html')
+
+@login_required
 def goto(request):
     return render(request, 'goto.html')
 

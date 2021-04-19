@@ -23,6 +23,7 @@ handler404 = 'game.views.error404'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.game, name='home'),
 
     #Auth
 
@@ -30,13 +31,15 @@ urlpatterns = [
     path('login/', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
 
-    #Games Stuff
-
-    path('', views.game, name='home'),
+    #Games
+    path('wackthemole/', views.w, name='s'),
     path('connect4/', views.connect4, name='game4'),
+    path('wackthemole/about', views.start, name='wack'),
+
+    #Other Than Games
+    path('followonsocialmedia/', views.s, name='s2'),
     path('wheretogo/', views.goto, name='go'),
     path('wheretogo/1', views.nl, name='go1'),
-    path('wackthemole/', views.w, name='s'),
     path('privacypolicy/', views.privacy, name='privacy'),
     path('rules/', views.rules, name='rules'),
     path('about/', views.about, name='about'),
@@ -47,7 +50,7 @@ urlpatterns = [
     path('TweetsByMe/', views.twitter, name='t'),
     path('privacypolicyandroid/', views.privacyapp, name='app'),
     path('AboutOurWeb/', views.our, name='our'),
-    path('wackthemole/about', views.start, name='wack'),
+
     path('blog/', include('blog.urls')),
     path('createyourrandompassword/', include('password.urls')),
 ]

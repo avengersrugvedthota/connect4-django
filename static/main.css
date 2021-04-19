@@ -83,3 +83,9 @@ section {
     opacity: 0;
   }
 }
+
+@media (max-width: 991px){
+    h2 {
+    font-size: 30px;
+}
+}
