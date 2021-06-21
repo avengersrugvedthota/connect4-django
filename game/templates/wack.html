@@ -1,5 +1,14 @@
 {% extends 'Base.html' %} {% load static %} {% block content %}
 
+<style>
+    .darkmode--activated .h2{
+        color: #fff;
+    }
+    .h2{
+        color: #000;
+    }
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -7,11 +16,11 @@
     <link rel="stylesheet" href="{% static 'maon.css' %}">
       <h1 style="text-align:center;" class="service_heading">Whack a mole!</h1>
 
-        <h2>Your score:</h2>
-        <h2 id="score">0</h2>
+        <h2 class="h2">Your score:</h2>
+        <h2 id="score" class="h2">0</h2>
 
-        <h2>Seconds left:</h2>
-         <h2 id="time-left">60</h2>
+        <h2 class="h2">Seconds left:</h2>
+         <h2 class="h2" id="time-left">60</h2>
 
       <div class="grid">
         <div class="square" id="1"></div>

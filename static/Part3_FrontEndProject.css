@@ -69,4 +69,5 @@ button:hover .arrow-down {
 	padding: 20px;
 	border-radius: 25px;
 	background-color: #FFA500;
+	z-index: 100;
 }
